@@ -1,0 +1,19 @@
+Zadanie zaliczeniowe z Django
+Imię i nazwisko ucznia: Kacper Kędziora
+Data wykonania zadania: 31.03.2024r.
+Treść zadania: Aplikacja do tworzenia kont mailowych w danej domenie dla pracowników firmy.
+Opis funkcjonalności aplikacji: 
+
+Program jest prostym generatorem adresów e-mail dla pracowników. Użytkownik może wprowadzić imię i nazwisko pracownika na stronie głównej. Po zatwierdzeniu formularza, program generuje adres e-mail na podstawie wprowadzonych danych oraz zapisuje te informacje w bazie danych.
+
+Główne funkcje:
+- Generowanie adresu e-mail: Program generuje adres e-mail pracownika na podstawie wprowadzonych imienia i nazwiska. Adres e-mail składa się z pierwszej litery imienia, nazwiska oraz domeny firmowej ("imie.nazwisko@nasza_firma.com").
+- Normalizacja polskich znaków diakrytycznych: Przed wygenerowaniem adresu e-mail, program normalizuje polskie znaki diakrytyczne, zamieniając je na ich odpowiedniki bez diakrytyków.
+- Unikalność adresu e-mail: Program zapewnia, że wygenerowany adres e-mail jest unikalny w bazie danych. Jeśli istnieje już pracownik o takim adresie e-mail, do nazwy zostaje dodany numer.
+- Zapisywanie danych w bazie: Po wygenerowaniu adresu e-mail, program tworzy nowy rekord w bazie danych zawierający imię, nazwisko i wygenerowany adres e-mail pracownika.
+Po zapisaniu danych, użytkownik zostaje przekierowany na stronę wyników, gdzie może zobaczyć ostatnio wygenerowany adres e-mail.
+
+Wykorzystane technologie:
+- Django
+- Bootstrap
+- JavaScript
