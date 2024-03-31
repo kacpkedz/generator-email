@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Emaili</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'css/index.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <img src="{% static 'images/logo.jpg' %}" alt="Logo" class="logo">
+        <h1 class="mb-4">Generator Adresów E-mail</h1>
+        <form method="POST" action="{% url 'index' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="first_name">Imię pracownika:</label>
+                <input type="text" class="form-control" id="first_name" name="first_name" required>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Nazwisko pracownika:</label>
+                <input type="text" class="form-control" id="last_name" name="last_name" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Generuj E-mail</button>
+        </form>
+        {% if email %}
+            <div class="mt-4">
+                <h2>Wygenerowany Adres E-mail:</h2>
+                <p>{{ email }}</p>
+            </div>
+        {% endif %}
+    </div>
+</body>
+</html>
